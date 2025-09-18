@@ -1,0 +1,218 @@
+<!--
+Artlink Media Africa — Brand Community Package
+Includes:
+1) index.html (Starter Website)
+2) email.html (HTML Email Newsletter Template)
+-->
+
+<!-- ==========================
+     index.html (Website)
+     ========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artlink Media Africa — Community</title>
+  <meta name="description" content="Artlink Media Africa — A hub for software developers, creators, and innovators in Africa and beyond." />
+  <style>
+    :root{
+      --accent:#0056D2; /* Primary Blue */
+      --highlight:#FF6B00; /* Accent Orange */
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+      background:linear-gradient(180deg,#071025 0%, #071733 100%);
+      color:#e6eef8;
+      min-height:100vh
+    }
+    .container{max-width:1100px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--highlight));display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:#cfe8ff;text-decoration:none;margin-left:18px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:36px;align-items:center}
+    .card{background:rgba(255,255,255,0.03);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(6,8,15,0.6)}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cde3ff}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .feature{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.04);color:var(--muted);display:flex;justify-content:space-between}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      nav a{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">AMA</div>
+        <div>
+          <div style="font-weight:800">Artlink Media Africa</div>
+          <div style="font-size:12px;color:var(--muted)">Information Service Solution</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#academy">Academy</a>
+        <a href="#hub">Community Hub</a>
+        <a href="#studios">Studios</a>
+        <a href="#tech">Tech</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Empowering Africa through Tech, Creativity & Learning</h1>
+          <p class="lead">Join Artlink Academy, collaborate in our Creators Hub, explore creative media at Studios, and build solutions with our Tech division.</p>
+          <div class="cta">
+            <button class="btn btn-primary">Join the Hub</button>
+            <button class="btn btn-ghost">Explore Academy</button>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <strong>Academy</strong>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Short courses in coding, editing, and freelancing.</div>
+            </div>
+            <div class="feature">
+              <strong>Creators Hub</strong>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Network, collaborate, and grow together.</div>
+            </div>
+            <div class="feature">
+              <strong>Studios & Tech</strong>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Media services + software development.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <strong>Upcoming</strong>
+          <div style="margin-top:10px;color:var(--muted)">Intro to Web Dev — Live on Oct 5 • 5:00 PM EAT</div>
+          <div style="margin-top:16px">
+            <strong>Featured Project</strong>
+            <div style="margin-top:8px;color:var(--muted)">Student Portfolio — Responsive HTML/CSS</div>
+          </div>
+          <div style="margin-top:16px">
+            <strong>Quick links</strong>
+            <div style="margin-top:8px;color:var(--muted)">Join Hub • Apply for Mentorship</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="card" style="margin-top:22px">
+      <h2 style="margin:0 0 8px">Recent Projects</h2>
+      <div class="projects">
+        <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">Portfolio: Jane — responsive site (HTML/CSS)</div>
+        <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">Short Film: Team Beta — 3-min YouTube short</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>Artlink Media Africa — © 2025</div>
+      <div>Contact • <span style="color:var(--muted)">hello@artlinkmediaafrica.com</span></div>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+
+<!-- ==========================
+     email.html (Newsletter Template)
+     ========================== -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artlink Media Africa — Newsletter</title>
+    <style>
+      body {margin:0;padding:0;background-color:#071025}
+      a {color:#0056D2}
+    </style>
+  </head>
+  <body style="margin:0;padding:24px;background-color:#071025;font-family:Arial,Helvetica,sans-serif;">
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width:720px;margin:0 auto;background:#0b1220;border-radius:12px;overflow:hidden">
+      <tr>
+        <td style="padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.03)">
+          <table role="presentation" width="100%"><tr>
+            <td style="vertical-align:middle">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0056D2,#FF6B00);display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:800">AMA</div>
+                <div>
+                  <div style="font-weight:800;color:#eaf4ff">Artlink Media Africa</div>
+                  <div style="font-size:12px;color:#94a3b8">Information Service Solution</div>
+                </div>
+              </div>
+            </td>
+            <td style="text-align:right;vertical-align:middle">
+              <a href="#" style="text-decoration:none;font-weight:700;color:#cfe8ff">View in browser</a>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:22px">
+          <h1 style="margin:0 0 8px;font-size:20px;color:#fff">This Week @ Artlink Academy</h1>
+          <p style="margin:0 0 16px;color:#94a3b8;font-size:14px">Live session on Web Development • Oct 5, 5:00 PM EAT. Plus — student showcases from our Hub & Studios.</p>
+
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 18px"><tr>
+            <td>
+              <a href="#" style="display:inline-block;padding:10px 16px;border-radius:8px;background:#0056D2;color:white;text-decoration:none;font-weight:700">Reserve Spot</a>
+            </td>
+            <td style="width:12px"></td>
+            <td>
+              <a href="#" style="display:inline-block;padding:10px 16px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dff0ff;text-decoration:none;font-weight:700">Explore Academy</a>
+            </td>
+          </tr></table>
+
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:8px;vertical-align:top;width:50%">
+                <table role="presentation" width="100%" style="background:rgba(255,255,255,0.02);border-radius:8px;padding:12px"><tr><td>
+                  <strong style="display:block;color:#fff">Live Workshop</strong>
+                  <div style="color:#94a3b8;font-size:13px;margin-top:6px">Intro to Web Dev — hands-on</div>
+                </td></tr></table>
+              </td>
+              <td style="padding:8px;vertical-align:top;width:50%">
+                <table role="presentation" width="100%" style="background:rgba(255,255,255,0.02);border-radius:8px;padding:12px"><tr><td>
+                  <strong style="display:block;color:#fff">Hub Showcase</strong>
+                  <div style="color:#94a3b8;font-size:13px;margin-top:6px">Portfolio project from Jane (HTML/CSS)</div>
+                </td></tr></table>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-top:1px solid rgba(255,255,255,0.03)">
+          <table role="presentation" width="100%"><tr>
+            <td style="color:#94a3b8;font-size:13px">Follow us: <a href="#">YouTube</a> • <a href="#">TikTok</a> • <a href="#">Discord</a></td>
+            <td style="text-align:right;color:#94a3b8;font-size:13px">hello@artlinkmediaafrica.com</td>
+          </tr></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
