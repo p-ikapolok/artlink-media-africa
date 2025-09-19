@@ -19,7 +19,7 @@ Our goal is to provide access to skills, resources, and opportunities in:
 ---
 
 ## 🌐 Live Demo
-👉 [Visit Website](https://<your-username>.github.io/artlink-media-africa)
+👉 [Visit Website](https://artlink-media-africa.vercel.app)
 
 ---
 
@@ -51,4 +51,4 @@ Join the Artlink Media Africa community to learn, collaborate, and grow together
 📱 WhatsApp / Telegram (connect with peers)
 
 📄 License
-This project is licensed under the MIT License — feel free to use, share, and contribute!
+This project is licensed under the MIT License  feel free to use, share, and contribute!
