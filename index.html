@@ -7,8 +7,8 @@
   <meta name="description" content="Artlink Media Africa — A hub for software developers, creators, and innovators in Africa and beyond." />
   <style>
     :root{
-      --accent:#0056D2; /* Primary Blue */
-      --highlight:#FF6B00; /* Accent Orange */
+      --accent:#0056D2;
+      --highlight:#FF6B00;
       --bg:#0f172a;
       --card:#0b1220;
       --muted:#94a3b8
@@ -19,45 +19,135 @@
       font-family:Poppins,Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
       background:linear-gradient(180deg,#071025 0%, #071733 100%);
       color:#e6eef8;
-      min-height:100vh
+      min-height:100vh;
+      display:flex;
     }
-    .container{max-width:1100px;margin:36px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--highlight));display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav a{color:#cfe8ff;text-decoration:none;margin-left:18px;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:36px;align-items:center}
-    .card{background:rgba(255,255,255,0.03);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(6,8,15,0.6)}
-    h1{font-size:28px;margin:0 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    /* Sidebar */
+    .sidebar{
+      width:240px;
+      background:var(--card);
+      padding:24px 16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border-right:1px solid rgba(255,255,255,0.06);
+      position:fixed;
+      top:0;
+      left:0;
+      height:100vh;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:30px;
+    }
+    .logo{
+      width:50px;
+      height:50px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--highlight));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+    .brand-text div:first-child{font-weight:800;font-size:16px}
+    .brand-text div:last-child{font-size:12px;color:var(--muted)}
+    nav a{
+      display:block;
+      color:#cfe8ff;
+      text-decoration:none;
+      margin:10px 0;
+      font-weight:600;
+      transition:all .2s;
+    }
+    nav a:hover{color:var(--highlight);transform:translateX(4px);}
+    footer.sidebar-footer{
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+      margin-top:auto;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Main Content */
+    .main{
+      margin-left:260px;
+      padding:36px 24px;
+      flex:1;
+      max-width:1100px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      padding:22px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(6,8,15,0.6);
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+    }
     .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
     .btn-primary{background:var(--accent);color:white}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cde3ff}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
     .feature{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
     .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.04);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    footer.main-footer{
+      margin-top:36px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,0.04);
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr;}
       .features{grid-template-columns:repeat(2,1fr)}
       .projects{grid-template-columns:1fr}
-      nav a{margin:0 10px 0 0;display:inline-block}
     }
-    @media (max-width:600px){
-      h1{font-size:22px}
-      .features{grid-template-columns:1fr}
+    @media (max-width:700px){
+      .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        padding:12px 20px;
+      }
+      .sidebar nav{
+        display:flex;
+        gap:14px;
+      }
+      .main{
+        margin-left:0;
+        padding-top:20px;
+      }
+      .brand-text div:last-child{display:none}
+      footer.sidebar-footer{display:none}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
       <div class="brand">
         <div class="logo">AMA</div>
-        <div>
-          <div style="font-weight:800">Artlink Media Africa</div>
-          <div style="font-size:12px;color:var(--muted)">Information Service Solution</div>
+        <div class="brand-text">
+          <div>Artlink Media Africa</div>
+          <div>Information Service Solution</div>
         </div>
       </div>
       <nav>
@@ -65,14 +155,22 @@
         <a href="#hub">Community Hub</a>
         <a href="#studios">Studios</a>
         <a href="#tech">Tech</a>
+        <a href="#about">About</a>
       </nav>
-    </header>
+    </div>
+    <footer class="sidebar-footer">
+      © 2025 Artlink Media Africa
+    </footer>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
 
     <section class="hero">
       <div>
         <div class="card">
           <h1>Empowering Africa through Tech, Creativity & Learning</h1>
-          <p class="lead">Join Artlink Academy, collaborate in our Creators Hub, explore creative media at Studios, and build solutions with our Tech division.</p>
+          <p style="color:var(--muted)">Join Artlink Academy, collaborate in our Creators Hub, explore creative media at Studios, and build solutions with our Tech division.</p>
           <div class="cta">
             <button class="btn btn-primary">Join the Hub</button>
             <button class="btn btn-ghost">Explore Academy</button>
@@ -145,10 +243,11 @@
       </p>
     </section>
 
-    <footer>
+    <footer class="main-footer">
       <div>© 2025 Artlink Media Africa </div>
       <div>Contact • <span style="color:var(--muted)">hello@artlinkmediaafrica.com</span></div>
     </footer>
-  </div>
+
+  </main>
 </body>
 </html>
