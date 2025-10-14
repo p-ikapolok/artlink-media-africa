@@ -36,36 +36,24 @@
     flex-direction: column;
     transition: all 0.3s ease;
     overflow: hidden;
-    align-items: flex-start;
-  }
-
-  .sidebar-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    padding: 20px;
   }
 
   .sidebar.collapsed {
     width: 80px;
     min-width: 80px;
+  }
+
+  /* Sidebar top header */
+  .sidebar-top {
+    display: flex;
     align-items: center;
+    justify-content: space-between; /* places logo on left, hamburger on right */
+    width: 100%;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .sidebar.collapsed .logo span {
-    display: none;
-  }
-
-  .sidebar.collapsed .nav-links a span {
-    display: none;
-  }
-
-  .sidebar.collapsed .nav-links a {
-    justify-content: center;
-  }
-
+  /* Logo */
   .logo {
     display: flex;
     align-items: center;
@@ -87,6 +75,11 @@
   .logo span {
     font-size: 1.1rem;
     font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .sidebar.collapsed .logo span {
+    display: none;
   }
 
   /* Hamburger */
@@ -94,14 +87,13 @@
     background: none;
     border: none;
     color: #fff;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 700;
   }
 
-  .sidebar.collapsed .hamburger {
-    transform: rotate(90deg);
+  .hamburger.active::before {
     content: "M";
   }
 
@@ -128,6 +120,10 @@
 
   .nav-links a:hover {
     color: var(--highlight);
+  }
+
+  .sidebar.collapsed .nav-links a span {
+    display: none;
   }
 
   .sidebar.collapsed .nav-links a {
@@ -169,6 +165,7 @@
     left: 80px;
   }
 
+  /* User actions in header */
   .user-actions {
     display: flex;
     align-items: center;
@@ -214,6 +211,7 @@
     display: block;
   }
 
+  /* Cards and footer */
   .card {
     background: rgba(255, 255, 255, 0.03);
     padding: 22px;
