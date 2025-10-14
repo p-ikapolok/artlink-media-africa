@@ -29,22 +29,41 @@
 
     /* Sidebar */
     .sidebar {
-      background: #0b1220;
-      width: 250px;
-      min-width: 250px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
+  background: #0b1220;
+  width: 250px;
+  min-width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  align-items: flex-start;
+}
 
-    .sidebar.collapsed {
-      width: 80px;
-      min-width: 80px;
-      align-items: center;
-    }
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+  min-width: 80px;
+  align-items: center;
+}
+
+.sidebar.collapsed .logo span {
+  display: none;
+}
+
+.sidebar.collapsed .nav-links a span {
+  display: none;
+}
+
+.sidebar.collapsed .nav-links a {
+  justify-content: center;
+}
 
     .logo {
       display: flex;
