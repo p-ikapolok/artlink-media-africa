@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Artlink Media Africa Community</title>
   <style>
-  <style>
 :root {
   --accent: #0056D2;
   --highlight: #FF6B00;
@@ -177,7 +176,8 @@ body {
   transition: left 0.3s ease;
 }
 
-.sidebar.collapsed ~ .top-header {
+.sidebar.collapsed ~ .content .top-header,
+.sidebar.collapsed + .content .top-header {
   left: 80px;
 }
 
@@ -251,70 +251,77 @@ footer {
 @media (max-width: 768px) {
   body {
     flex-direction: column;
+    overflow-y: auto;
   }
 
   .sidebar {
-    flex-direction: row;
     width: 100%;
+    min-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     height: auto;
-    padding: 10px;
+    padding: 10px 15px;
   }
 
   .top-header {
-    left: 0;
+    left: 0 !important;
+    width: 100%;
+  }
+
+  .content {
+    padding-top: 80px;
   }
 }
-</style>
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo" id="logo">
+        <div class="logo-icon">AMA</div>
+        <span>Artlink Media Africa</span>
+      </div>
 
-<!-- ✅ Sidebar HTML -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-top">
-    <div class="logo">
-      <div class="logo-icon">AMA</div>
+      <button class="toggle-btn" id="toggleSidebar" aria-label="Toggle navigation">
+        <!-- Menu SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
-    <button class="toggle-btn" id="toggleSidebar" aria-label="Toggle navigation">
-      <!-- Menu SVG Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  <nav class="nav-links">
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
-        viewBox="0 0 24 24">
-        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path>
-      </svg><span>Dashboard</span></a>
-    <a href="#academy"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24"> <path d="M12 2L2 7l10 5 10-5-10-5z"></path> <path d="M2 17l10 5 10-5"></path> <path d="M2 12l10 5 10-5"></path> </svg> <span>Academy</span> </a>
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
-        viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 6v6l4 2"></path>
-      </svg><span>Community Hub</span></a>
-
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
-        viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="14" rx="2"></rect>
-        <path d="M8 21h8"></path>
-      </svg><span>Academy</span></a>
-
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
-        viewBox="0 0 24 24">
-        <path d="M4 12l1.41 1.41L8.83 10l-3.42-3.41L4 8l4 4-4 4zM20 12l-4-4 4-4 1.41 1.41L17.83 10l3.58 3.59L20 16l-4-4 4-4z"></path>
-      </svg><span>Tech</span></a>
-  </nav>
-</aside>
+    <nav class="nav-links">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+          viewBox="0 0 24 24">
+          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path>
+        </svg><span>Dashboard</span></a>
+      <a href="#academy"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24"> <path d="M12 2L2 7l10 5 10-5-10-5z"></path> <path d="M2 17l10 5 10-5"></path> <path d="M2 12l10 5 10-5"></path> </svg><span>Academy</span></a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+          viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg><span>Community Hub</span></a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+          viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path>
+        </svg><span>Academy</span></a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+          viewBox="0 0 24 24">
+          <path d="M4 12l1.41 1.41L8.83 10l-3.42-3.41L4 8l4 4-4 4zM20 12l-4-4 4-4 1.41 1.41L17.83 10l3.58 3.59L20 16l-4-4 4-4z"></path>
+        </svg><span>Tech</span></a>
+    </nav>
+  </aside>
 
   <main class="content">
     <header class="top-header">
       <h2>Welcome to Artlink Media Africa Community</h2>
-
       <div class="user-actions">
-        <!-- Apps (9 dots) -->
         <button title="Apps">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
             <circle cx="5" cy="5" r="1.5"/>
@@ -328,15 +335,11 @@ footer {
             <circle cx="19" cy="19" r="1.5"/>
           </svg>
         </button>
-
-        <!-- Notification Bell -->
         <button title="Notifications">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
             <path d="M12 24c1.104 0 2-.897 2-2h-4c0 1.103.896 2 2 2zm6.707-5l-1.414-1.414C17.479 17.105 18 15.607 18 14V9c0-3.309-2.691-6-6-6S6 5.691 6 9v5c0 1.607.521 3.105 1.707 4.586L6.293 19H18.707zM4 20h16v2H4z"/>
           </svg>
         </button>
-
-        <!-- Profile Avatar -->
         <div class="profile-icon" title="Profile">
           <img src="https://via.placeholder.com/40" alt="Profile">
         </div>
@@ -352,38 +355,6 @@ footer {
           <button class="btn btn-ghost">Explore Academy</button>
         </div>
       </div>
-
-      <div class="card">
-        <h2>Recent Projects</h2>
-        <p class="lead">Portfolio: Jane — responsive site (HTML/CSS)</p>
-        <p class="lead">Short Film: Team Beta — 3-min YouTube short</p>
-      </div>
-
-      <section id="about" class="card">
-        <h2 style="margin:0 0 12px;color:var(--highlight)">About Artlink Media Africa Community</h2>
-        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-          <strong>Artlink Media Africa Community</strong> is a forward-thinking network built to connect, empower, and inspire Africa’s next generation of digital creators, learners, and innovators.
-        </p>
-        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-          We believe that learning thrives in collaboration. Our community brings together individuals passionate about <strong>technology, design, freelancing, and entrepreneurship</strong> — creating a space where ideas are shared, skills are developed, and opportunities are discovered.
-        </p>
-        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-          At the heart of Artlink Media Africa is a simple vision: <em>to make digital education and innovation accessible to everyone across the continent.</em> Through mentorship, live learning sessions, and collaborative projects, we aim to equip members with practical knowledge that drives both personal and professional growth.
-        </p>
-
-        <div style="background:rgba(255,255,255,0.02);border-radius:10px;padding:18px;margin-top:18px;">
-          <h3 style="margin:0 0 10px;color:var(--accent)">What We Stand For</h3>
-          <ul style="list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.8;">
-            <li><strong>Empowerment:</strong> Providing tools, resources, and mentorship for career and skill growth.</li>
-            <li><strong>Collaboration:</strong> Encouraging teamwork, innovation, and community-led problem-solving.</li>
-            <li><strong>Opportunity:</strong> Creating pathways for freelancers, students, and professionals to succeed in the digital economy.</li>
-          </ul>
-        </div>
-
-        <p style="color:var(--muted);line-height:1.7;margin-top:16px;text-align:center;">
-          Join us in building a community where learning never stops — a place where every member contributes to Africa’s growing digital future.
-        </p>
-      </section>
     </div>
 
     <footer>
@@ -391,7 +362,6 @@ footer {
     </footer>
   </main>
 
-  <!-- JavaScript -->
   <script>
     const sidebar = document.getElementById("sidebar");
     const toggleBtn = document.getElementById("toggleSidebar");
