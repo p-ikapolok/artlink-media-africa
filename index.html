@@ -391,22 +391,21 @@ footer {
     </footer>
   </main>
 
+  <!-- JavaScript -->
   <script>
-const sidebar = document.getElementById('sidebar');
-const logo = document.getElementById('logo');
-const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleSidebar");
+    const logo = document.getElementById("logo");
 
-// Collapse when hamburger is clicked
-hamburger.addEventListener('click', () => {
-  sidebar.classList.add('collapsed');
-});
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+    });
 
-// Expand when logo is clicked
-logo.addEventListener('click', () => {
-  if (sidebar.classList.contains('collapsed')) {
-    sidebar.classList.remove('collapsed');
-  }
-});
-</script>
+    logo.addEventListener("click", () => {
+      if (sidebar.classList.contains("collapsed")) {
+        sidebar.classList.remove("collapsed");
+      }
+    });
+  </script>
 </body>
 </html>
