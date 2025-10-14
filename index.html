@@ -106,8 +106,9 @@
       font-size: 24px;
       cursor: pointer;
       margin-bottom: 20px;
-      transition: margin-left 0.3s ease;
+      transition: all 0.3s ease;
       align-self: flex-start;
+      font-weight: 700;
     }
 
     .sidebar.collapsed .hamburger {
@@ -261,8 +262,15 @@
   <script>
     const sidebar = document.getElementById('sidebar');
     const toggle = document.getElementById('toggleSidebar');
+
     toggle.addEventListener('click', () => {
       sidebar.classList.toggle('collapsed');
+      // Switch icon text
+      if (sidebar.classList.contains('collapsed')) {
+        toggle.textContent = 'M'; // transform to M
+      } else {
+        toggle.textContent = '☰'; // back to hamburger
+      }
     });
   </script>
 </body>
