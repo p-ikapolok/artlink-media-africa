@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Artlink Media Africa Community</title>
   <style>
+  <style>
   :root {
     --accent: #0056D2;
     --highlight: #FF6B00;
@@ -43,11 +44,11 @@
     min-width: 80px;
   }
 
-  /* Sidebar top header */
+  /* Sidebar Top: Logo + Toggle */
   .sidebar-top {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* places logo on left, hamburger on right */
+    justify-content: space-between;
     width: 100%;
     padding: 18px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -58,7 +59,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: opacity 0.3s ease;
   }
 
   .logo-icon {
@@ -82,19 +82,27 @@
     display: none;
   }
 
-  /* Hamburger */
-  .hamburger {
+  /* Toggle Button (Hamburger SVG) */
+  .toggle-btn {
     background: none;
     border: none;
-    color: #fff;
-    font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
   }
 
-  .hamburger.active::before {
-    content: "M";
+  .toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .toggle-btn svg {
+    width: 26px;
+    height: 26px;
   }
 
   /* Nav links */
@@ -248,48 +256,50 @@
     }
   }
 </style>
-</head>
-<body>
-  <aside class="sidebar" id="sidebar">
-    <div>
-      <div class="logo">
-        <div class="logo-icon">AMA</div><button class="hamburger" id="toggleSidebar" aria-label="Toggle navigation">☰</button>
-      </div>
-      <div class="nav-links">
-        <a href="#academy">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
-          </svg>
-          <span>Academy</span>
-        </a>
-        <a href="#hub">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 6v6l4 2"></path>
-          </svg>
-          <span>Community Hub</span>
-        </a>
-        <a href="#studios">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="14" rx="2"></rect>
-            <path d="M8 21h8"></path>
-          </svg>
-          <span>Studios</span>
-        </a>
-        <a href="#tech">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22" viewBox="0 0 24 24">
-            <path d="M4 12l1.41 1.41L8.83 10l-3.42-3.41L4 8l4 4-4 4zM20 12l-4-4 4-4 1.41 1.41L17.83 10l3.58 3.59L20 16l-4-4 4-4z"></path>
-          </svg>
-          <span>Tech</span>
-        </a>
-      </div>
+
+<!-- ✅ Sidebar HTML -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <div class="logo">
+      <div class="logo-icon">AMA</div>
+      <span>Artlink Media Africa</span>
     </div>
-    <footer>
-      <div></div>
-    </footer>
-  </aside>
+
+    <button class="toggle-btn" id="toggleSidebar" aria-label="Toggle navigation">
+      <!-- Menu SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+        viewBox="0 0 24 24">
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path>
+      </svg><span>Dashboard</span></a>
+
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+        viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 6v6l4 2"></path>
+      </svg><span>Community Hub</span></a>
+
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+        viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="14" rx="2"></rect>
+        <path d="M8 21h8"></path>
+      </svg><span>Academy</span></a>
+
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="22" height="22"
+        viewBox="0 0 24 24">
+        <path d="M4 12l1.41 1.41L8.83 10l-3.42-3.41L4 8l4 4-4 4zM20 12l-4-4 4-4 1.41 1.41L17.83 10l3.58 3.59L20 16l-4-4 4-4z"></path>
+      </svg><span>Tech</span></a>
+  </nav>
+</aside>
 
   <main class="content">
     <header class="top-header">
