@@ -112,7 +112,7 @@
     }
 
     .sidebar.collapsed .hamburger {
-      margin-left: 0;
+      transform: rotate(90deg);
     }
 
     /* Main Content */
@@ -121,9 +121,11 @@
       overflow-y: auto;
       background: linear-gradient(180deg, #071025 0%, #071733 100%);
       padding: 24px;
+      padding-top: 90px; /* space for header */
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
     .card {
@@ -150,118 +152,6 @@
       flex-wrap: wrap;
     }
 
-    .apps-menu {
-  background: rgba(255, 255, 255, 0.06);
-  border: none;
-  color: #e6eef8;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.apps-menu:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-    /* Fixed Header */
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
-  color: #e6eef8;
-  padding: 15px 25px;
-  position: fixed;
-  top: 0;
-  left: 250px;
-  right: 0;
-  z-index: 10;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  transition: left 0.3s ease;
-}
-
-.sidebar.collapsed ~ .content .top-header {
-  left: 80px; /* adjust when sidebar collapses */
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-actions button {
-  background: rgba(255, 255, 255, 0.06);
-  border: none;
-  color: #e6eef8;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.user-actions button:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.profile-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  border: 2px solid rgba(255,255,255,0.15);
-  transition: border 0.3s ease;
-}
-
-.profile-icon:hover {
-  border: 2px solid rgba(255,255,255,0.4);
-}
-
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-.user-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.content {
-  flex: 1;
-  overflow-y: auto;
-  background: linear-gradient(180deg, #071025 0%, #071733 100%);
-  padding: 24px;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Ensure content doesn’t hide behind header */
-.card {
-  margin-top: 20px;
-}
-
     .btn {
       padding: 10px 14px;
       border-radius: 10px;
@@ -281,8 +171,75 @@
       color: #cde3ff;
     }
 
+    /* Header */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      color: #e6eef8;
+      padding: 15px 25px;
+      position: fixed;
+      top: 0;
+      left: 250px;
+      right: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .content .top-header {
+      left: 80px;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-actions button {
+      background: rgba(255, 255, 255, 0.06);
+      border: none;
+      color: #e6eef8;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .user-actions button:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      transition: border 0.3s ease;
+    }
+
+    .profile-icon:hover {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .profile-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     footer {
-      margin-top: auto;
+      margin-top: 20px;
       padding-top: 18px;
       border-top: 1px solid rgba(255, 255, 255, 0.04);
       color: var(--muted);
@@ -301,18 +258,18 @@
         flex-direction: row;
         width: 100%;
         height: auto;
+        padding: 10px;
       }
 
-      .content {
-        flex: 1;
-        overflow-y: auto;
+      .top-header {
+        left: 0;
       }
     }
   </style>
 </head>
 <body>
   <aside class="sidebar" id="sidebar">
-    <button class="hamburger" id="toggleSidebar">☰</button>
+    <button class="hamburger" id="toggleSidebar" aria-label="Toggle navigation">☰</button>
     <div>
       <div class="logo">
         <div class="logo-icon">AMA</div>
@@ -350,83 +307,85 @@
         </a>
       </div>
     </div>
-    <footer>
-      <div></div>
-    </footer>
   </aside>
 
   <main class="content">
     <header class="top-header">
-  <h2>Welcome to Artlink Media Africa Community</h2>
+      <h2>Welcome to Artlink Media Africa Community</h2>
 
-  <div class="user-actions">
-    <!-- Nine Dots Menu -->
-    <button class="apps-menu" title="Apps">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
-        <circle cx="5" cy="5" r="1.5"/>
-        <circle cx="12" cy="5" r="1.5"/>
-        <circle cx="19" cy="5" r="1.5"/>
-        <circle cx="5" cy="12" r="1.5"/>
-        <circle cx="12" cy="12" r="1.5"/>
-        <circle cx="19" cy="12" r="1.5"/>
-        <circle cx="5" cy="19" r="1.5"/>
-        <circle cx="12" cy="19" r="1.5"/>
-        <circle cx="19" cy="19" r="1.5"/>
-      </svg>
-    </button>
+      <div class="user-actions">
+        <!-- Apps (9 dots) -->
+        <button title="Apps">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
+            <circle cx="5" cy="5" r="1.5"/>
+            <circle cx="12" cy="5" r="1.5"/>
+            <circle cx="19" cy="5" r="1.5"/>
+            <circle cx="5" cy="12" r="1.5"/>
+            <circle cx="12" cy="12" r="1.5"/>
+            <circle cx="19" cy="12" r="1.5"/>
+            <circle cx="5" cy="19" r="1.5"/>
+            <circle cx="12" cy="19" r="1.5"/>
+            <circle cx="19" cy="19" r="1.5"/>
+          </svg>
+        </button>
 
-    <!-- Notification Bell -->
-    <button class="notification-btn" title="Notifications">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
-        <path d="M12 24c1.104 0 2-.897 2-2h-4c0 1.103.896 2 2 2zm6.707-5l-1.414-1.414C17.479 17.105 18 15.607 18 14V9c0-3.309-2.691-6-6-6S6 5.691 6 9v5c0 1.607.521 3.105 1.707 4.586L6.293 19H18.707zM4 20h16v2H4z"/>
-      </svg>
-    </button>
+        <!-- Notification Bell -->
+        <button title="Notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="22" height="22" viewBox="0 0 24 24">
+            <path d="M12 24c1.104 0 2-.897 2-2h-4c0 1.103.896 2 2 2zm6.707-5l-1.414-1.414C17.479 17.105 18 15.607 18 14V9c0-3.309-2.691-6-6-6S6 5.691 6 9v5c0 1.607.521 3.105 1.707 4.586L6.293 19H18.707zM4 20h16v2H4z"/>
+          </svg>
+        </button>
 
-    <!-- Profile Avatar -->
-    <div class="profile-icon" title="Profile">
-      <img src="https://via.placeholder.com/40" alt="Profile">
-    </div>
-  </div>
-</header>
-    <div class="card">
-      <h1>Empowering Africa through Tech, Creativity & Learning</h1>
-      <p class="lead">Join Artlink Academy, collaborate in our Creators Hub, explore creative media at Studios, and build solutions with our Tech division.</p>
-      <div class="cta">
-        <button class="btn btn-primary">Join the Hub</button>
-        <button class="btn btn-ghost">Explore Academy</button>
+        <!-- Profile Avatar -->
+        <div class="profile-icon" title="Profile">
+          <img src="https://via.placeholder.com/40" alt="Profile">
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <h2>Recent Projects</h2>
-      <p class="lead">Portfolio: Jane — responsive site (HTML/CSS)</p>
-      <p class="lead">Short Film: Team Beta — 3-min YouTube short</p>
-    </div>
-        <!-- About Section -->
-    <section id="about" class="card" style="margin-top:30px">
-      <h2 style="margin:0 0 12px;color:var(--highlight)">About Artlink Media Africa Community</h2>
-      <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-        <strong>Artlink Media Africa Community</strong> is a forward-thinking network built to connect, empower, and inspire Africa’s next generation of digital creators, learners, and innovators.
-      </p>
-      <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-        We believe that learning thrives in collaboration. Our community brings together individuals passionate about <strong>technology, design, freelancing, and entrepreneurship</strong> — creating a space where ideas are shared, skills are developed, and opportunities are discovered.
-      </p>
-      <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
-        At the heart of Artlink Media Africa is a simple vision: <em>to make digital education and innovation accessible to everyone across the continent.</em> Through mentorship, live learning sessions, and collaborative projects, we aim to equip members with practical knowledge that drives both personal and professional growth.
-      </p>
+    </header>
 
-      <div style="background:rgba(255,255,255,0.02);border-radius:10px;padding:18px;margin-top:18px;">
-        <h3 style="margin:0 0 10px;color:var(--accent)">What We Stand For</h3>
-        <ul style="list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.8;">
-          <li> <strong>Empowerment:</strong> Providing tools, resources, and mentorship for career and skill growth.</li>
-          <li> <strong>Collaboration:</strong> Encouraging teamwork, innovation, and community-led problem-solving.</li>
-          <li> <strong>Opportunity:</strong> Creating pathways for freelancers, students, and professionals to succeed in the digital economy.</li>
-        </ul>
+    <div>
+      <div class="card">
+        <h1>Empowering Africa through Tech, Creativity & Learning</h1>
+        <p class="lead">Join Artlink Academy, collaborate in our Creators Hub, explore creative media at Studios, and build solutions with our Tech division.</p>
+        <div class="cta">
+          <button class="btn btn-primary">Join the Hub</button>
+          <button class="btn btn-ghost">Explore Academy</button>
+        </div>
       </div>
 
-      <p style="color:var(--muted);line-height:1.7;margin-top:16px;text-align:center;">
-        Join us in building a community where learning never stops — a place where every member contributes to Africa’s growing digital future.
-      </p>
-    </section>
+      <div class="card">
+        <h2>Recent Projects</h2>
+        <p class="lead">Portfolio: Jane — responsive site (HTML/CSS)</p>
+        <p class="lead">Short Film: Team Beta — 3-min YouTube short</p>
+      </div>
+
+      <section id="about" class="card">
+        <h2 style="margin:0 0 12px;color:var(--highlight)">About Artlink Media Africa Community</h2>
+        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
+          <strong>Artlink Media Africa Community</strong> is a forward-thinking network built to connect, empower, and inspire Africa’s next generation of digital creators, learners, and innovators.
+        </p>
+        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
+          We believe that learning thrives in collaboration. Our community brings together individuals passionate about <strong>technology, design, freelancing, and entrepreneurship</strong> — creating a space where ideas are shared, skills are developed, and opportunities are discovered.
+        </p>
+        <p style="color:var(--muted);line-height:1.7;margin-bottom:12px;">
+          At the heart of Artlink Media Africa is a simple vision: <em>to make digital education and innovation accessible to everyone across the continent.</em> Through mentorship, live learning sessions, and collaborative projects, we aim to equip members with practical knowledge that drives both personal and professional growth.
+        </p>
+
+        <div style="background:rgba(255,255,255,0.02);border-radius:10px;padding:18px;margin-top:18px;">
+          <h3 style="margin:0 0 10px;color:var(--accent)">What We Stand For</h3>
+          <ul style="list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.8;">
+            <li><strong>Empowerment:</strong> Providing tools, resources, and mentorship for career and skill growth.</li>
+            <li><strong>Collaboration:</strong> Encouraging teamwork, innovation, and community-led problem-solving.</li>
+            <li><strong>Opportunity:</strong> Creating pathways for freelancers, students, and professionals to succeed in the digital economy.</li>
+          </ul>
+        </div>
+
+        <p style="color:var(--muted);line-height:1.7;margin-top:16px;text-align:center;">
+          Join us in building a community where learning never stops — a place where every member contributes to Africa’s growing digital future.
+        </p>
+      </section>
+    </div>
+
     <footer>
       <div>&copy; 2025 Artlink Media Africa. All Rights Reserved.</div>
     </footer>
@@ -440,9 +399,9 @@
       sidebar.classList.toggle('collapsed');
       // Switch icon text
       if (sidebar.classList.contains('collapsed')) {
-        toggle.textContent = 'M'; // transform to M
+        toggle.textContent = 'M';
       } else {
-        toggle.textContent = '☰'; // back to hamburger
+        toggle.textContent = '☰';
       }
     });
   </script>
