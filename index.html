@@ -8,10 +8,9 @@
 :root {
   --accent: #0056D2;
   --highlight: #FF6B00;
-  --bg: #ffffff;
-  --card: #f5f5f5;
-  --muted: #555555;
-  --text: #0f172a;
+  --bg: #0f172a;
+  --card: #0b1220;
+  --muted: #94a3b8;
 }
 
 * {
@@ -21,8 +20,8 @@
 body {
   margin: 0;
   font-family: Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: var(--bg);
-  color: var(--text);
+  background:  #ffffff;
+  color: #0f172a;
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -30,14 +29,89 @@ body {
 
 /* Sidebar */
 .sidebar {
-  background: var(--bg);
-  color: var(--text);
+  background: #ffffff;
+  color: #0f172a;
   width: 250px;
   min-width: 250px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
   overflow: visible;
+}
+
+    /* Body and general text */
+body {
+  background: #ffffff;
+  color: #0f172a; /* black text */
+}
+
+/* Sidebar */
+.sidebar {
+  background: #ffffff;
+  color: #0f172a; /* black text */
+}
+
+/* Nav links */
+.nav-links a {
+  color: #0f172a; /* black links */
+}
+.nav-links a:hover {
+  color: var(--highlight);
+}
+
+/* Logo text */
+.logo span {
+  color: #0f172a;
+}
+
+/* Header */
+.top-header {
+  background: #ffffff;
+  color: #0f172a;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* User actions (notifications, grid/nine-dot menu, etc.) */
+.user-actions button,
+.header-icon,
+.grid-menu,
+.notification-icon {
+  color: #0f172a; /* black icons */
+  background: transparent;
+}
+.user-actions button:hover,
+.header-icon:hover,
+.grid-menu:hover,
+.notification-icon:hover {
+  color: var(--highlight);
+}
+
+/* Profile border */
+.profile-icon {
+  border: 2px solid rgba(0,0,0,0.15);
+}
+.profile-icon:hover {
+  border: 2px solid rgba(0,0,0,0.4);
+}
+
+/* Cards */
+.card {
+  background: rgba(0,0,0,0.03); /* very light black overlay */
+  color: #0f172a;
+}
+
+/* Footer */
+footer {
+  color: #0f172a;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Nav link icons (svg) */
+.nav-links a svg {
+  fill: #0f172a;
+}
+.nav-links a:hover svg {
+  fill: var(--highlight);
 }
 
 .sidebar.collapsed {
@@ -71,7 +145,15 @@ body {
 .logo-icon {
   width: 100px;
   height: 100px;
+  border-radius: 10px;
+  background: none; /* Remove old gradient background */
   object-fit: contain;
+}
+
+.logo-icon {
+  width: 100px;   /* original size */
+  height: 100px;
+  object-fit: contain; /* ensures the full logo scales inside */
   display: block;
 }
 
@@ -81,16 +163,16 @@ body {
 }
 
 .sidebar.collapsed .logo-icon {
-  width: 50px;
+  width: 50px; /* keep original, so nothing gets cut */
   height: 50px;
 }
 
-/* Toggle Button */
+/* Toggle Button (Hamburger SVG) */
 .toggle-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +182,7 @@ body {
 }
 
 .toggle-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .toggle-btn svg {
@@ -108,6 +190,7 @@ body {
   height: 26px;
 }
 
+/* Hide hamburger when sidebar is collapsed */
 .sidebar.collapsed .toggle-btn {
   display: none;
 }
@@ -126,7 +209,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--text);
+  color: #0f172a;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
@@ -149,8 +232,8 @@ body {
 .content {
   flex: 1;
   overflow-y: auto;
-  background: var(--bg);
-  color: var(--text);
+  background: #ffffff;
+  color: #0f172a;
   padding: 24px;
   padding-top: 90px; /* space for header */
   transition: all 0.3s ease;
@@ -158,72 +241,22 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-    /* Header icons (notifications, nine-dots, etc.) */
-.user-actions button,
-.header-icon,
-.grid-menu,
-.notification-icon {
-  background: transparent;   /* remove gray, keep it clean */
-  color: #0f172a;            /* black icons/text */
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.user-actions button:hover,
-.header-icon:hover,
-.grid-menu:hover,
-.notification-icon:hover {
-  color: var(--highlight);    /* highlight color on hover */
-}
-
-/* Notification badge */
-.notification-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: var(--highlight);
-  color: #fff;
-  font-size: 10px;
-  font-weight: bold;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Nav link icons */
-.nav-links a svg {
-  fill: #0f172a;             /* black icons */
-  transition: fill 0.3s ease;
-}
-
-.nav-links a:hover svg {
-  fill: var(--highlight);
-}
 
 /* Header */
 .top-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: #0f172a;
   padding: 15px 25px;
   position: fixed;
   top: 0;
   left: 250px;
   right: 0;
   z-index: 10;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: left 0.3s ease;
 }
 
@@ -233,10 +266,16 @@ body {
 }
 
 /* User actions in header */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .user-actions button {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   border: none;
-  color: var(--text);
+  color: #e6eef8;
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -248,7 +287,7 @@ body {
 }
 
 .user-actions button:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .profile-icon {
@@ -257,12 +296,12 @@ body {
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   transition: border 0.3s ease;
 }
 
 .profile-icon:hover {
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .profile-icon img {
@@ -274,19 +313,17 @@ body {
 
 /* Cards and footer */
 .card {
-  background: var(--card);
-  background: #f5f5f5; /* light card background */
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
   padding: 22px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(6, 8, 15, 0.6);
   margin-bottom: 20px;
 }
 
 footer {
   margin-top: 20px;
   padding-top: 18px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
   color: var(--muted);
   display: flex;
   justify-content: space-between;
