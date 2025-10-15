@@ -58,18 +58,19 @@ body {
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--highlight));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #fff;
+  background: none; /* Remove old gradient background */
+  object-fit: contain;
 }
 
 .logo span {
@@ -79,8 +80,15 @@ body {
   transition: opacity 0.3s ease;
 }
 
+/* Hide text when sidebar is collapsed */
 .sidebar.collapsed .logo span {
   display: none;
+}
+
+/* When collapsed, enlarge logo slightly */
+.sidebar.collapsed .logo-icon {
+  width: 50px;
+  height: 50px;
 }
 
 /* Toggle Button (Hamburger SVG) */
@@ -279,9 +287,8 @@ footer {
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <div class="logo" id="logo">
-        <div class="logo-icon">AMA</div>
+        <img src="artlink_media_africa_logo.svg" alt="Artlink Media Africa Logo" class="logo-icon" />
       </div>
-
       <button class="toggle-btn" id="toggleSidebar" aria-label="Toggle navigation">
         <!-- Menu SVG Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
