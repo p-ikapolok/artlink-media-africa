@@ -13,6 +13,7 @@
   --text-color: #1f2937; /* professional dark gray for text */
   --muted: #6b7280; /* muted text */
   --border-color: #d1d5db; /* subtle border color */
+  --icon-color: #374151; /* slightly lighter nav icon color */
 }
 
 /* Global Reset */
@@ -142,11 +143,13 @@ body {
 }
 
 .nav-links a svg {
-  fill: var(--text-color);
+  fill: none; /* keep original outline style */
+  stroke: var(--icon-color);
+  stroke-width: 2;
 }
 
 .nav-links a:hover svg {
-  fill: var(--highlight);
+  stroke: var(--highlight);
 }
 
 .sidebar.collapsed .nav-links a span {
@@ -206,7 +209,9 @@ body {
 .grid-menu,
 .notification-icon {
   color: var(--text-color);
-  background: transparent;
+  background: none; /* removed square background */
+  border: none;
+  padding: 0;
 }
 
 .user-actions button:hover,
@@ -216,6 +221,13 @@ body {
   color: var(--highlight);
 }
 
+/* Make nine dots bigger */
+.grid-menu svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Profile icon */
 .profile-icon {
   width: 40px;
   height: 40px;
