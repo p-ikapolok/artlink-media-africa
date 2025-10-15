@@ -238,6 +238,25 @@ body {
   transition: border 0.3s ease;
 }
 
+    .whatsapp-btn {
+    background: transparent;
+    border: none;
+    color: #0f172a; /* black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    color: var(--highlight); /* hover highlight */
+    background: rgba(0,0,0,0.05); /* subtle hover effect */
+}
+
 .profile-icon:hover {
   border: 2px solid var(--text-color);
 }
@@ -376,6 +395,18 @@ footer {
         <div class="cta">
           <button class="btn btn-primary">Join the Hub</button>
           <button class="btn btn-ghost">Explore Academy</button>
+          <!-- WhatsApp Button (Header or Sidebar) -->
+<button 
+    class="user-actions whatsapp-btn" 
+    onclick="window.open('https://chat.whatsapp.com/DZDr1LXmnrk7BYm4azLwpJ?mode=ems_copy_t', '_blank')"
+    title="Join WhatsApp Community"
+>
+    <!-- You can use a WhatsApp icon SVG here -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.93 11.93 0 0 0 12 .04C5.37.04.05 5.37.05 12c0 2.12.55 4.1 1.52 5.86L0 24l6.3-1.64A11.94 11.94 0 0 0 12 24c6.63 0 11.95-5.33 11.95-12 0-3.2-1.24-6.2-3.43-8.52zm-8.5 17.4a9.9 9.9 0 0 1-5.3-1.56l-.38-.23-3.73.97.99-3.63-.25-.38a9.87 9.87 0 1 1 8.67 4.83zm5.65-7.4c-.29-.15-1.71-.84-1.98-.93-.27-.1-.46-.15-.65.15-.19.3-.73.93-.9 1.12-.17.19-.33.21-.61.07-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.46-1.71-1.63-2-.17-.29-.02-.45.13-.6.13-.13.29-.33.44-.5.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.57-.9-2.15-.24-.56-.48-.49-.65-.5-.17 0-.36-.01-.55-.01-.19 0-.5.07-.76.36-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.19 2.11 3.22 5.12 4.52.72.31 1.28.49 1.72.63.72.23 1.37.2 1.88.12.57-.09 1.71-.69 1.95-1.36.24-.66.24-1.22.17-1.36-.07-.14-.27-.23-.56-.38z"/>
+    </svg>
+</button>
+
         </div>
       </div>
     </div>
