@@ -325,6 +325,7 @@ body {
   display: flex;
   gap: 16px; /* space between buttons */
   flex-wrap: wrap;
+  justify-content: center; /* center on smaller screens */
 }
 
 /* Primary button */
@@ -332,8 +333,8 @@ body {
   background-color: #0056D2; /* blue */
   color: #ffffff; /* white text */
   border: none;
-  padding: 12px 24px;
-  border-radius: 12px; /* rounded corners */
+  padding: 12px 30px; /* padding for pill shape */
+  border-radius: 9999px; /* fully rounded */
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -350,8 +351,8 @@ body {
   background: transparent;
   color: #0056D2; /* blue text */
   border: 2px solid #0056D2; /* blue border */
-  padding: 12px 24px;
-  border-radius: 12px; /* rounded corners */
+  padding: 12px 30px; /* padding for pill shape */
+  border-radius: 9999px; /* fully rounded */
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -362,6 +363,20 @@ body {
   background-color: #0056D2;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* Responsive: Full-width buttons on small screens */
+@media (max-width: 768px) {
+  .cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Cards and footer */
