@@ -287,6 +287,34 @@ body {
   display: block;
 }
 
+   .social-follow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: Poppins, sans-serif;
+  color: #0f172a;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-follow p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.social-buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0f172a; /* icon color */
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-buttons button:hover {
+  color: #FF6B00; /* highlight color */
+} 
+
 /* Cards and footer */
 .card {
   background: var(--card-bg);
@@ -434,41 +462,54 @@ footer {
         <div class="cta">
           <button class="btn btn-primary">Join the Hub</button>
           <button class="btn btn-ghost">Explore Academy</button>
-          <div class="user-actions">
+          <div class="social-follow">
+  <p>Follow us on our social communities:</p>
+  <div class="social-buttons">
     <!-- WhatsApp -->
     <button onclick="window.open('https://chat.whatsapp.com/DZDr1LXmnrk7BYm4azLwpJ?mode=ems_copy_t','_blank')" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+      <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <!-- Telegram -->
+    <button onclick="window.open('https://t.me/yourtelegramchannel','_blank')" title="Telegram">
+      <i class="fab fa-telegram-plane"></i>
+    </button>
+
+    <!-- Discord -->
+    <button onclick="window.open('https://discord.gg/yourdiscordlink','_blank')" title="Discord">
+      <i class="fab fa-discord"></i>
     </button>
 
     <!-- Facebook -->
     <button onclick="window.open('https://www.facebook.com/yourpage','_blank')" title="Facebook">
-        <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-facebook-f"></i>
     </button>
 
     <!-- TikTok -->
-    <button onclick="window.open('https://www.tiktok.com/@yourprofile','_blank')" title="TikTok">
-        <i class="fab fa-tiktok"></i>
+    <button onclick="window.open('https://www.tiktok.com/@yourhandle','_blank')" title="TikTok">
+      <i class="fab fa-tiktok"></i>
     </button>
 
     <!-- LinkedIn -->
     <button onclick="window.open('https://www.linkedin.com/in/yourprofile','_blank')" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-linkedin-in"></i>
     </button>
 
     <!-- Instagram -->
-    <button onclick="window.open('https://www.instagram.com/yourprofile','_blank')" title="Instagram">
-        <i class="fab fa-instagram"></i>
+    <button onclick="window.open('https://www.instagram.com/yourhandle','_blank')" title="Instagram">
+      <i class="fab fa-instagram"></i>
     </button>
 
-    <!-- X (formerly Twitter) -->
-    <button onclick="window.open('https://twitter.com/yourprofile','_blank')" title="X">
-        <i class="fab fa-x-twitter"></i>
+    <!-- X / Twitter -->
+    <button onclick="window.open('https://x.com/yourhandle','_blank')" title="X">
+      <i class="fab fa-x-twitter"></i>
     </button>
 
     <!-- YouTube -->
     <button onclick="window.open('https://www.youtube.com/channel/yourchannel','_blank')" title="YouTube">
-        <i class="fab fa-youtube"></i>
+      <i class="fab fa-youtube"></i>
     </button>
+  </div>
 </div>
 
         </div>
