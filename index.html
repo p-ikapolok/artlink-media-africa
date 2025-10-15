@@ -321,6 +321,49 @@ body {
   color: #FF6B00; /* highlight color on hover */
 }
 
+    .cta {
+  display: flex;
+  gap: 16px; /* space between buttons */
+  flex-wrap: wrap;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #0056D2; /* blue */
+  color: #ffffff; /* white text */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px; /* rounded corners */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0041a8; /* darker blue on hover */
+  transform: translateY(-2px);
+}
+
+/* Ghost button (outline style) */
+.btn-ghost {
+  background: transparent;
+  color: #0056D2; /* blue text */
+  border: 2px solid #0056D2; /* blue border */
+  padding: 12px 24px;
+  border-radius: 12px; /* rounded corners */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background-color: #0056D2;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* Cards and footer */
 .card {
   background: var(--card-bg);
